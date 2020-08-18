@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title>My fist Vue</title>
+    <script src="http://unpkg.com/vue"></script>
+</head>
+<body>
+    <style>
+        table tr th {
+            font-size:16pt;
+            color:white;
+            background-color:blue;
+            padding: 5px 15px;
+        }
+        table tr td {
+            font-size:16pt;
+            color:gray;
+            border:1px solid gray;
+        }
+        li {
+            font-size:16pt;
+            color:gray;
+        }
+    </style>
+    <h1>Vue.js</h1>
+    <div id="app">
+        <template v-if="flag">
+            <p>データをテーブル表示する</p>
+        </template>
+        <template v-else>
+            <p>データをリスト表示する</p>
+        </template>
+    </div>
+    <hr>
+    <button onclick="doAction();">
+        click
+    </button>
+    <script>
+    var data = {
+        flag:true
+    };
+
+    var app = new Vue({
+        el: '#app',
+        data: data
+    });
+
+    function doAction(){
+        data.flag = !data.flag;
+    }
+    </script>
+</body>
+</html>
