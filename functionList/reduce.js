@@ -7,7 +7,7 @@ const fruits = [
   {'id': 3, 'kind': 'grape', 'price': 200},
 ]
 
-var price = fruits.reduce(function(pre, curr) {
+var priceSum = fruits.reduce(function(pre, curr) {
    return pre + curr.price; 
 }, 0);
 
